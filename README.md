@@ -1,6 +1,10 @@
 # Summary
-A console-based program built to simulate a medieval/fantasy economy that reacts to world events and changes. Eventually to be converted back to Unity aiming to create a more user-friendly GUI.
-# Inspiration
+A console-based program built to simulate a medieval/fantasy economy that reacts to world events and changes. Eventually to be converted back to Unity in order create a more user-friendly GUI.
+
+# Current State
+This project initially started its life in Unity. I have since decided that I don't need the GUI framework that Unity provides until the project is significantly further on. By removing all Unity references and instead establishing the project as a C# console application gives the opportunity for development without having to lug the 'power-hungry' Unity around everywhere too.
+
+# Explaination
 The real-world economy is a complicated beast, it is difficult to comprehend without serious study. Creating a realistic simulated economy is even more difficult, especially when you, as a Game Master, are attempting to create a responsive world from world-changing, cataclysmic events to the mundane minutea of everyday life.
 
 I run the occasional Dungeons and Dragons campaign and one of my biggest pet-peeves in running a campaign is creating a shop. It sounds like a small problem in the grand scheme of things but I find it deeply annoying. The troulbe I have always had is knowing exactly what would be available from a shop/stall/travelling salesman at any given time. I could just make it up, which is certainly what a lot of people do, but the trouble with that is it doesn't always make sense. If the players need a specific item to drive the story forward I have no problem placing that item in the story or at a specific point for the players to find - a plot MacGuffin that is rare and difficult to find is a neccesary part to most D&D campaigns. What bothers me are the mundane shops with a seemingly random assortment of items available to the players.
