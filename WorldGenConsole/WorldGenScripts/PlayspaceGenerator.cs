@@ -1,12 +1,13 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
-public class PlayspaceGenerator : UnityEngine.MonoBehaviour
+public class PlayspaceGenerator
 {
     private const int CITIES = 30;
     private const int REGION_AREA = 50000; //measured in miles
 
     // Use this for initialization
-    void Start()
+    public void Start()
     {
         EstablishCities(EstablishArea(REGION_AREA), CITIES);
     }
@@ -22,10 +23,12 @@ public class PlayspaceGenerator : UnityEngine.MonoBehaviour
         for (int i = 0; i < numCities; i++)
         {
             int[] coordinates = new int[2];
+            Random rand = new Random();
+
 
             for (int j = 0; j < 2; j++)
             {
-                coordinates[j] = UnityEngine.Random.Range(xWorldDim, yWorldDim + 1);
+                coordinates[j] = rand.Next(xWorldDim, yWorldDim + 1);
             }
 
             lCityLocations.Add(coordinates);
@@ -52,12 +55,13 @@ public class PlayspaceGenerator : UnityEngine.MonoBehaviour
 
         //x * y = surfaceArea
         //Randomly selects x dimension
-        int x = UnityEngine.Random.Range(minX, maxX);
+        Random rand = new Random();
+        int x = rand.Next(minX, maxX + 1);
         int y = surfaceArea / x;
 
         int[] dimensions = { x, y };
 
-        UnityEngine.MonoBehaviour.print("X: " + dimensions[0] + "\nY: " + dimensions[1] + "\nArea: " + (dimensions[0] * dimensions[1]).ToString());
+        System.Diagnostics.Debug.Print("X: " + dimensions[0] + "\nY: " + dimensions[1] + "\nArea: " + (dimensions[0] * dimensions[1]).ToString());
 
         return dimensions;
     }

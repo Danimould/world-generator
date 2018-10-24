@@ -15,7 +15,7 @@ public class City
         SetTitle(name);
         SetPopulation(inhabitants);
 
-        UnityEngine.MonoBehaviour.print(title + ": " + location[0].ToString() + ", " + location[1] + "; " + population.ToString());
+        System.Diagnostics.Debug.Print(title + ": " + location[0].ToString() + ", " + location[1] + "; " + population.ToString());
 
         InitialseProduction(population);
     }

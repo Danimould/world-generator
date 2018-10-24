@@ -66,7 +66,7 @@ public class ResourceModel : PopulationBased
         foreach(int prod in products)
         {
             lResourceQuantity[i] = lResourceQuantity[i] + prod;
-            UnityEngine.MonoBehaviour.print("Resource produced: " + lResourceQuantity[i].ToString());
+            System.Diagnostics.Debug.Print("Resource produced: " + lResourceQuantity[i].ToString());
             i++;
         }
     }

@@ -14,7 +14,7 @@ public class ProductionController
 {
     //Percentage of food produced to feed population
     //Currently set at 100% efficiency
-    private int foodEfficieny = 1;
+    private double foodEfficieny = 1.0;
     private const int MEALS_IN_BARREL = 80;
 
     //Returns quantites of produce in an int array
@@ -40,10 +40,10 @@ public class ProductionController
     {
         //Produces enough barrels of food for the day for population * efficiency
         //TODO: MUST ROUND UP!!!
-        double fFoodQuant = (double)System.Math.Ceiling(people / MEALS_IN_BARREL * foodEfficieny);
+        double fFoodQuant = System.Math.Ceiling(people / MEALS_IN_BARREL * foodEfficieny);
         int foodQuant = (int)fFoodQuant;
 
-        UnityEngine.MonoBehaviour.print("Food produced: " + foodQuant.ToString());
+        System.Diagnostics.Debug.Print("Food produced: " + foodQuant.ToString());
         return foodQuant;
     }
 }
