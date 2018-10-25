@@ -18,13 +18,13 @@ public class ProductionController
     private const int MEALS_IN_BARREL = 80;
 
     //Returns quantites of produce in an int array
-    public int[] Produce(int producers, List<bool> canProduce)
+    public int[] Produce(int population, List<bool> lCanProduce)
     {
         int food;
 
-        if (canProduce[(int)Resources.food])
+        if (lCanProduce[(int)Resources.food])
         {
-            food = Food(producers);
+            food = ProduceFood(population);
         }
         else
         {
@@ -36,11 +36,11 @@ public class ProductionController
         return products;
     }
 
-    private int Food(int people)
+    private int ProduceFood(int population)
     {
         //Produces enough barrels of food for the day for population * efficiency
         //TODO: MUST ROUND UP!!!
-        double fFoodQuant = people / MEALS_IN_BARREL * foodEfficieny;
+        double fFoodQuant = population / MEALS_IN_BARREL * foodEfficieny;
         int foodQuant = (int)fFoodQuant;
 
         System.Diagnostics.Debug.Print("Food produced: " + foodQuant.ToString());
