@@ -25,6 +25,7 @@ public class City
         ResourceModel rm = new ResourceModel(pop);
     }
 
+    //========= Getters and Setters ==========
     private void SetLocation(int[] x)
     {
         location = x;

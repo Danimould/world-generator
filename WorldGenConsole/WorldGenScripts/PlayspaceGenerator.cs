@@ -28,7 +28,13 @@ public class PlayspaceGenerator
 
             for (int j = 0; j < 2; j++)
             {
-                coordinates[j] = rand.Next(xWorldDim, yWorldDim + 1);
+                if (xWorldDim < yWorldDim)
+                {
+                    coordinates[j] = rand.Next(xWorldDim, yWorldDim + 1);
+                } else {
+                    coordinates[j] = rand.Next(yWorldDim, xWorldDim + 1);
+                }
+                   
             }
 
             lCityLocations.Add(coordinates);

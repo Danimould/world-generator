@@ -13,9 +13,9 @@ using System.Collections.Generic;
 
 public class ResourceModel : PopulationBased
 {
-    private ConsumptionController conMan;
-    private ProductionController proMan;
-    private TradeController traMan;
+    private ConsumptionController consumptionController;
+    private ProductionController productionController;
+    private TradeController tradeController;
 
     //List of resources that the city can produce
     private List<bool> lProduces;
@@ -25,9 +25,13 @@ public class ResourceModel : PopulationBased
 
     private int people;
 
+    // Class entry point
+    // Initialise population, managers, resource lists and produces the first batch of products
     public ResourceModel(int population)
     {
+        // MUST DO FIRST
         SetPeople(population);
+
         InstantiateManagers();
         InstantiateLists();
         ProduceProducts();
@@ -35,18 +39,19 @@ public class ResourceModel : PopulationBased
 
     private void InstantiateManagers()
     {
-        conMan = new ConsumptionController();
-        proMan = new ProductionController();
-        traMan = new TradeController();
+        consumptionController = new ConsumptionController();
+        productionController = new ProductionController();
+        tradeController = new TradeController();
     }
 
+    // Sets up collects of resources
     private void InstantiateLists()
     {
         lProduces = new List<bool>();
         lResourceQuantity = new List<int>();
         for (int i = 0; i < (int)Resources.length; i++)
         {
-            //All resources are produced in all cities (for the time being
+            //All resources are produced in all cities (for the time being)
             lProduces.Add(true);
 
             //All resource quantities are set to zero by default
@@ -56,16 +61,16 @@ public class ResourceModel : PopulationBased
 
     private void ProduceProducts()
     {
-        int[] products = proMan.Produce(people, lProduces);
+        int[] products = productionController.Produce(people, lProduces);
         UpdateProductLedger(products);
     }
 
     private void UpdateProductLedger(int[] products)
     {
         int i = 0;
-        foreach(int prod in products)
+        foreach(int product in products)
         {
-            lResourceQuantity[i] = lResourceQuantity[i] + prod;
+            lResourceQuantity[i] = lResourceQuantity[i] + product;
             System.Diagnostics.Debug.Print("Resource produced: " + lResourceQuantity[i].ToString());
             i++;
         }

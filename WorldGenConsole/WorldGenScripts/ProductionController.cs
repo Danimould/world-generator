@@ -40,7 +40,7 @@ public class ProductionController
     {
         //Produces enough barrels of food for the day for population * efficiency
         //TODO: MUST ROUND UP!!!
-        double fFoodQuant = System.Math.Ceiling(people / MEALS_IN_BARREL * foodEfficieny);
+        double fFoodQuant = people / MEALS_IN_BARREL * foodEfficieny;
         int foodQuant = (int)fFoodQuant;
 
         System.Diagnostics.Debug.Print("Food produced: " + foodQuant.ToString());
