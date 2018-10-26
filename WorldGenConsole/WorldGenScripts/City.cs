@@ -17,10 +17,11 @@ public class City
 
         System.Diagnostics.Debug.Print(title + ": " + location[0].ToString() + ", " + location[1] + "; " + population.ToString());
 
-        InitialseProduction(population);
+        InitialiseResourceModel(population);
     }
 
-    private void InitialseProduction(int pop)
+    //Create the database of stored resources
+    private void InitialiseResourceModel(int pop)
     {
         ResourceModel rm = new ResourceModel(pop);
     }

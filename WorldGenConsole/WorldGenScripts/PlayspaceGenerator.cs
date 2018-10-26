@@ -40,9 +40,9 @@ public class PlayspaceGenerator
             lCityLocations.Add(coordinates);
         }
 
-        //Names
+        //City Names
         List<string> lCityNames = new List<string>() { "London", "York", "Bristol", "Coventry", "Norwich", "Lincoln", "Salisbury", "King's Lynn", "Colchester", "Bolton", "Beverley", "Newcastle", "Canterbury", "Bury St Edmunds", "Oxford", "Glouster", "Leicester", "Shrewsbury", "Great Yarmouth", "Hereford", "Cambridge", "Ely", "Plymouth", "Exeter", "Hull", "Worcester", "Ipswich", "Northampton", "Nottingham", "Winchester" };
-        //Populations
+        //City Populations (based on 17th Century census)
         List<int> lCityPopulations = new List<int>() { 23314, 7248, 6345, 4817, 3952, 3569, 3226, 3217, 2955, 2871, 2663, 2647, 2574, 2445, 2357, 2239, 2101, 2083, 1941, 1903, 1902, 1772, 1700, 1560, 1557, 1557, 1507, 1477, 1447, 1440 };
 
         for (int i = 0; i < 30; i++)
@@ -62,7 +62,7 @@ public class PlayspaceGenerator
         //x * y = surfaceArea
         //Randomly selects x dimension
         Random rand = new Random();
-        int x = rand.Next(minX, maxX + 1);
+        int x = rand.Next(minX, maxX);
         int y = surfaceArea / x;
 
         int[] dimensions = { x, y };

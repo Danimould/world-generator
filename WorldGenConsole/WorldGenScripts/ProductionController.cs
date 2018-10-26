@@ -10,6 +10,7 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 
 public class ProductionController
 {
@@ -45,7 +46,7 @@ public class ProductionController
         //Rounds up to nearest integer value
         double foodQuant = Math.Ceiling(dFoodQuant);
 
-        System.Diagnostics.Debug.Print("Food produced: " + foodQuant.ToString());
+        Debug.Print("Food produced: " + foodQuant.ToString());
         return (int)foodQuant;
     }
 }
