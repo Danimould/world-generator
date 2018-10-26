@@ -8,6 +8,7 @@
  * Largest city would require 23,314 / 80 = 291.425 ≈ 292 barrels of food per day to survive
  * Food barrel value = 80 * 0.5 = 40gp
  */
+using System;
 using System.Collections.Generic;
 
 public class ProductionController
@@ -15,7 +16,7 @@ public class ProductionController
     //Percentage of food produced to feed population
     //Currently set at 100% efficiency
     private double foodEfficieny = 1.0;
-    private const int MEALS_IN_BARREL = 80;
+    private const double MEALS_IN_BARREL = 80;
 
     //Returns quantites of produce in an int array
     public int[] Produce(int population, List<bool> lCanProduce)
@@ -39,11 +40,12 @@ public class ProductionController
     private int ProduceFood(int population)
     {
         //Produces enough barrels of food for the day for population * efficiency
-        //TODO: MUST ROUND UP!!!
-        double fFoodQuant = population / MEALS_IN_BARREL * foodEfficieny;
-        int foodQuant = (int)fFoodQuant;
+        double dFoodQuant = population / MEALS_IN_BARREL * foodEfficieny;
+
+        //Rounds up to nearest integer value
+        double foodQuant = Math.Ceiling(dFoodQuant);
 
         System.Diagnostics.Debug.Print("Food produced: " + foodQuant.ToString());
-        return foodQuant;
+        return (int)foodQuant;
     }
 }
