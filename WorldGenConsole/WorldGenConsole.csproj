@@ -34,7 +34,6 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WorldGenScripts\BananaTest.cs" />
     <Compile Include="WorldGenScripts\City.cs" />
     <Compile Include="WorldGenScripts\ConsumptionController.cs" />
     <Compile Include="WorldGenScripts\EResources.cs" />
@@ -45,6 +44,11 @@
     <Compile Include="WorldGenScripts\ResourceManager.cs" />
     <Compile Include="WorldGenScripts\TimeController.cs" />
     <Compile Include="WorldGenScripts\TradeController.cs" />
+    <Compile Include="WorldGenScripts\Resource.cs" />
+    <Compile Include="WorldGenScripts\Resources\Food.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="WorldGenScripts\Resources\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
