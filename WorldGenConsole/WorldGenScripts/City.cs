@@ -23,7 +23,7 @@ public class City
     //Create the database of stored resources
     private void InitialiseResourceModel(int pop)
     {
-        ResourceModel rm = new ResourceModel(pop);
+        ResourceManager rm = new ResourceManager(pop);
     }
 
     //========= Getters and Setters ==========

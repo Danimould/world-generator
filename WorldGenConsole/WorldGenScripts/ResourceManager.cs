@@ -11,7 +11,7 @@
  */
 using System.Collections.Generic;
 
-public class ResourceModel : PopulationBased
+public class ResourceManager : PopulationBased
 {
     private ConsumptionController consumptionController;
     private ProductionController productionController;
@@ -27,7 +27,7 @@ public class ResourceModel : PopulationBased
 
     // Class entry point
     // Initialise population, managers, resource lists and produces the first batch of products
-    public ResourceModel(int population)
+    public ResourceManager(int population)
     {
         // MUST DO FIRST
         SetPeople(population);

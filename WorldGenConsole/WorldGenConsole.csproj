@@ -42,7 +42,7 @@
     <Compile Include="WorldGenScripts\PlayspaceGenerator.cs" />
     <Compile Include="WorldGenScripts\PopulationBased.cs" />
     <Compile Include="WorldGenScripts\ProductionController.cs" />
-    <Compile Include="WorldGenScripts\ResourceModel.cs" />
+    <Compile Include="WorldGenScripts\ResourceManager.cs" />
     <Compile Include="WorldGenScripts\TimeController.cs" />
     <Compile Include="WorldGenScripts\TradeController.cs" />
   </ItemGroup>
