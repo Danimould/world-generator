@@ -49,7 +49,7 @@ public class ResourceManager : PopulationBased
     {
         lProduces = new List<bool>();
         lResourceQuantity = new List<int>();
-        for (int i = 0; i < (int)Resources.length; i++)
+        for (int i = 0; i < (int)EResources.length; i++)
         {
             //All resources are produced in all cities (for the time being)
             lProduces.Add(true);

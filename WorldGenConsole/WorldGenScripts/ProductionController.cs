@@ -24,7 +24,7 @@ public class ProductionController
     {
         int food;
 
-        if (lCanProduce[(int)Resources.food])
+        if (lCanProduce[(int)EResources.food])
         {
             food = ProduceFood(population);
         }
